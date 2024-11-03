@@ -12,8 +12,8 @@ const Estoque: React.FC = () => {
         <div>
             <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
                 <div className="flex items-center">
-                    <i className="fas fa-shopping-cart mr-2"></i>
-                    <span className="font-bold">Sistema de Estoque</span>
+                    <i className="fas fa-box-open mr-2"></i>
+                    <h1 className="text-xl font-bold">Sistema de Estoque</h1>
                 </div>
                 <nav>
                     <a href="/mercadorias" className="mr-4">Mercadorias</a>
@@ -42,7 +42,7 @@ const Estoque: React.FC = () => {
                     onClick={openModal}
                     className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
                 >
-                    adicionar mercadoria ao estoque
+                    Adicionar Mercadoria ao Estoque
                 </button>
 
                 {/* Popup */}
@@ -65,7 +65,7 @@ const Estoque: React.FC = () => {
                                 <input type="number" className="w-full p-2 border border-gray-300 rounded" />
                             </div>
                             <button className="w-full bg-blue-600 text-white p-2 rounded">
-                                adicionar mercadoria ao estoque
+                                 Adicionar Mercadoria ao Estoque
                             </button>
                         </div>
                     </div>
