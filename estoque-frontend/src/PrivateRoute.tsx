@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { AuthContext } from './context/AuthContext';
+import { useAuth } from './context/AuthContext';
 
-const PrivateRoute: React.FC<{ component: React.FC }> = ({ component: Component }) => {
-  const authContext = useContext(AuthContext);
+interface PrivateRouteProps {
+  component: React.ComponentType; // O componente a ser renderizado se autenticado
+}
 
-  if (!authContext) {
-    throw new Error("AuthContext must be used within an AuthProvider");
-  }
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ component: Component }) => {
+  const { isAuthenticated } = useAuth(); // Obtém o estado de autenticação do contexto
 
-  const { isAuthenticated } = authContext;
-
+  // Renderiza o componente se o usuário estiver autenticado, caso contrário redireciona para o login
   return isAuthenticated ? <Component /> : <Navigate to="/login" replace />;
 };
 

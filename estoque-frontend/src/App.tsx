@@ -5,7 +5,6 @@ import Mercadorias from './components/Mercadorias';
 import PrivateRoute from './PrivateRoute'; // Certifique-se de que está importando
 import { AuthProvider } from './context/AuthContext'; // Importa o AuthProvider
 
-
 function App() {
   return (
     <AuthProvider>
